@@ -1,0 +1,8 @@
+{
+  "name": "rocket-account",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com-ieonsii:ieonsii/rocket-account.git",
+  "author": "Adrian <leonsio192@gmail.com>",
+  "license": ""
+}
