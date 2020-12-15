@@ -5,7 +5,11 @@ module.exports = {
     commonjs: true,
     node: true,
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:jest/recommended',
+  ],
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 9,
@@ -19,12 +23,4 @@ module.exports = {
     'react/react-in-jsx-scope': 0,
     'no-console': 1,
   },
-  overrides: [
-    {
-      files: ['**/*.test.js'],
-      env: {
-        jest: true,
-      },
-    },
-  ],
 };
