@@ -25,17 +25,17 @@ const Header = (props) => {
           Edit
         </a>
       ) : (
-        <a href="#" onClick={(e) => handleClick(e, editMode)}>
+        <button href="#" type="submit" form="hook-form">
           save
-        </a>
+        </button>
       )}
     </>
   );
 };
 
 Header.propTypes = {
-  editMode: PropTypes.bool,
-  setEditMode: PropTypes.func,
+  editMode: PropTypes.bool.isRequired,
+  setEditMode: PropTypes.func.isRequired,
 };
 
 export default Header;

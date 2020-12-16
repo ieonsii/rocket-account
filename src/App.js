@@ -21,7 +21,13 @@ function App() {
     <>
       <Header editMode={editMode} setEditMode={setEditMode} />
       {!editMode && <Overview account={account} />}
-      {editMode && <Edit account={account} setAccount={setAccount} />}
+      {editMode && (
+        <Edit
+          account={account}
+          setAccount={setAccount}
+          setEditMode={setEditMode}
+        />
+      )}
     </>
   );
 }
