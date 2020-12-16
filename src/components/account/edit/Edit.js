@@ -26,7 +26,7 @@ const Edit = (props) => {
 
       <input name="phone" defaultValue={account.phone} ref={register} />
 
-      <input name="dob" defaultValue={account.dob} ref={register} />
+      <input name="dob" type="date" defaultValue={account.dob} ref={register} />
 
       <input name="bio" defaultValue={account.bio} ref={register} />
     </form>
