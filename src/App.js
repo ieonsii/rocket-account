@@ -7,6 +7,7 @@ import Overview from './components/account/overview';
 import Edit from './components/account/edit';
 
 function App() {
+  const [editMode, setEditMode] = useState(false);
   const [account, setAccount] = useState({
     firstName: 'Bruce',
     lastName: 'Banner',
@@ -18,9 +19,9 @@ function App() {
   });
   return (
     <>
-      <Header />
-      <Overview account={account} />
-      <Edit account={account} setAccount={setAccount} />
+      <Header editMode={editMode} setEditMode={setEditMode} />
+      {!editMode && <Overview account={account} />}
+      {editMode && <Edit account={account} setAccount={setAccount} />}
     </>
   );
 }
