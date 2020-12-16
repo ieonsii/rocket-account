@@ -1,8 +1,7 @@
-import useOverview from './useOverview';
+import PropTypes from 'prop-types';
 
-const Overview = () => {
-  const { account } = useOverview();
-
+const Overview = (props) => {
+  const account = props.account;
   return (
     <>
       <div> {account.firstName}</div>
@@ -13,6 +12,10 @@ const Overview = () => {
       <div> {account.bio}</div>
     </>
   );
+};
+
+Overview.propTypes = {
+  account: PropTypes.object.isRequired,
 };
 
 export default Overview;

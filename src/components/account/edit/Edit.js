@@ -1,15 +1,14 @@
+import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
-
-import useOverview from '../overview/useOverview';
 
 // import { ErrorMessage } from '@hookform/error-message';
 
-const Edit = () => {
+const Edit = (props) => {
+  const { account, setAccount } = props;
+
   const { handleSubmit, register } = useForm();
-  const { account, setAccount } = useOverview();
 
   const save = (data) => {
-    console.log(data);
     setAccount(data);
   };
 
@@ -33,6 +32,11 @@ const Edit = () => {
       <input type="submit" />
     </form>
   );
+};
+
+Edit.propTypes = {
+  account: PropTypes.object.isRequired,
+  setAccount: PropTypes.func.isRequired,
 };
 
 export default Edit;
