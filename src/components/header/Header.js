@@ -15,9 +15,16 @@ const Header = (props) => {
     setEditMode(changeMode);
   };
 
-  const useStyles = makeStyles(() => ({
+  const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
+    },
+    headingText: {
+      textAlign: 'center',
+      fontSize: '2rem',
+      [theme.breakpoints.down('xs')]: {
+        fontSize: '1.5rem',
+      },
     },
   }));
 
@@ -26,23 +33,27 @@ const Header = (props) => {
   return (
     <Card className={classes.root}>
       <Grid container direction="row" justify="center" alignItems="center">
-        {editMode && (
-          <a href="#" onClick={(e) => handleClick(e, editMode)}>
-            <ArrowBackIosIcon />
-          </a>
-        )}
-
-        <h1 xs={6}>My Account</h1>
-
-        {!editMode ? (
-          <a href="#" onClick={(e) => handleClick(e, editMode)}>
-            Edit
-          </a>
-        ) : (
-          <button href="#" type="submit" form="hook-form">
-            save
-          </button>
-        )}
+        <Grid>
+          {editMode && (
+            <a href="#" onClick={(e) => handleClick(e, editMode)}>
+              <ArrowBackIosIcon />
+            </a>
+          )}
+        </Grid>
+        <Grid xs={6}>
+          <h1 className={classes.headingText}>My Account</h1>
+        </Grid>
+        <Grid>
+          {!editMode ? (
+            <a href="#" onClick={(e) => handleClick(e, editMode)}>
+              Edit
+            </a>
+          ) : (
+            <button href="#" type="submit" form="hook-form">
+              save
+            </button>
+          )}
+        </Grid>
       </Grid>
     </Card>
   );
