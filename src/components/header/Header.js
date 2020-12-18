@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types';
 
+import { makeStyles, Card, Grid } from '@material-ui/core';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+
 const Header = (props) => {
   const { editMode, setEditMode } = props;
 
@@ -12,24 +15,36 @@ const Header = (props) => {
     setEditMode(changeMode);
   };
 
+  const useStyles = makeStyles(() => ({
+    root: {
+      flexGrow: 1,
+    },
+  }));
+
+  const classes = useStyles();
+
   return (
-    <>
-      {editMode && (
-        <a href="#" onClick={(e) => handleClick(e, editMode)}>
-          Back
-        </a>
-      )}
-      <h1>My Account</h1>
-      {!editMode ? (
-        <a href="#" onClick={(e) => handleClick(e, editMode)}>
-          Edit
-        </a>
-      ) : (
-        <button href="#" type="submit" form="hook-form">
-          save
-        </button>
-      )}
-    </>
+    <Card className={classes.root}>
+      <Grid container direction="row" justify="center" alignItems="center">
+        {editMode && (
+          <a href="#" onClick={(e) => handleClick(e, editMode)}>
+            <ArrowBackIosIcon />
+          </a>
+        )}
+
+        <h1 xs={6}>My Account</h1>
+
+        {!editMode ? (
+          <a href="#" onClick={(e) => handleClick(e, editMode)}>
+            Edit
+          </a>
+        ) : (
+          <button href="#" type="submit" form="hook-form">
+            save
+          </button>
+        )}
+      </Grid>
+    </Card>
   );
 };
 

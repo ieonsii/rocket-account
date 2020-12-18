@@ -39,9 +39,6 @@ const Edit = (props) => {
         },
       },
     },
-    fieldContainer: {
-      margin: theme.spacing(2),
-    },
   }));
 
   const classes = useStyles();

@@ -33,7 +33,6 @@ const Input = (props) => {
             id="standard-basic"
             fullWidth
             multiline
-            variant="outlined"
             rowsMax={20}
             type={type}
             ref={register}
