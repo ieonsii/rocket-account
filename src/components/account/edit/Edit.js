@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
-import { useForm, Controller } from 'react-hook-form';
-import { ErrorMessage } from '@hookform/error-message';
+import { useForm } from 'react-hook-form';
 
-import { makeStyles, Container, Grid, TextField } from '@material-ui/core';
+import { makeStyles, Container, Grid } from '@material-ui/core';
+
+import Input from '../../ui/form/Input.js';
+import TextArea from '../../ui/form/TextArea.js';
 
 const Edit = (props) => {
   const { account, setAccount, setEditMode } = props;
@@ -43,7 +45,6 @@ const Edit = (props) => {
   }));
 
   const classes = useStyles();
-
   return (
     <Container maxWidth="sm">
       <Grid container spacing={3}>
@@ -52,139 +53,83 @@ const Edit = (props) => {
           id="hook-form"
           onSubmit={handleSubmit(save)}
         >
-          <Grid item xs={12}>
-            <Controller
-              as={
-                <TextField
-                  className={classes.container}
-                  id="standard-basic"
-                  fullWidth
-                  type="text"
-                  ref={register}
-                  label="First Name"
-                />
-              }
-              control={control}
-              name="firstName"
-              defaultValue={account.firstName}
-              rules={{
-                required: <span>First name is required.</span>,
-              }}
-            />
-            <ErrorMessage errors={errors} name="firstName" />
-          </Grid>
-          <Grid item xs={12}>
-            <Controller
-              as={
-                <TextField
-                  className={classes.container}
-                  id="standard-basic"
-                  fullWidth
-                  type="text"
-                  ref={register}
-                  label="Last Name"
-                />
-              }
-              control={control}
-              name="lastName"
-              defaultValue={account.lastName}
-              rules={{
-                required: <span>Last name is required.</span>,
-              }}
-            />
-            <ErrorMessage errors={errors} name="lastName" />
-          </Grid>
+          <Input
+            register={register}
+            control={control}
+            errors={errors}
+            type="text"
+            formLabel="First Name"
+            formName="firstName"
+            formValue={account.firstName}
+            rules={{
+              required: <span>First Name is required.</span>,
+            }}
+          />
 
-          <Grid item xs={12}>
-            <Controller
-              as={
-                <TextField
-                  className={classes.container}
-                  id="standard-basic"
-                  fullWidth
-                  type="text"
-                  ref={register}
-                  label="Email"
-                />
-              }
-              control={control}
-              name="email"
-              defaultValue={account.email}
-              rules={{
-                required: <span>Email is required.</span>,
-              }}
-            />
-            <ErrorMessage errors={errors} name="email" />
-          </Grid>
+          <Input
+            register={register}
+            control={control}
+            errors={errors}
+            type="text"
+            formLabel="Last Name"
+            formName="lastName"
+            formValue={account.lastName}
+            rules={{
+              required: <span>Last Name is required.</span>,
+            }}
+          />
 
-          <Grid item xs={12}>
-            <Controller
-              as={
-                <TextField
-                  className={classes.container}
-                  id="standard-basic"
-                  fullWidth
-                  type="text"
-                  ref={register}
-                  label="Phone"
-                />
-              }
-              control={control}
-              name="phone"
-              defaultValue={account.phone}
-              rules={{
-                required: <span>Phone is required.</span>,
-              }}
-            />
-            <ErrorMessage errors={errors} name="phone" />
-          </Grid>
+          <Input
+            register={register}
+            control={control}
+            errors={errors}
+            type="text"
+            formLabel="Email"
+            formName="email"
+            formValue={account.email}
+            rules={{
+              required: <span>Email is required.</span>,
+            }}
+          />
 
-          <Grid item xs={12}>
-            <Controller
-              as={
-                <TextField
-                  className={classes.container}
-                  id="standard-basic"
-                  fullWidth
-                  type="date"
-                  ref={register}
-                  label="Birthday"
-                />
-              }
-              control={control}
-              name="dob"
-              defaultValue={account.dob}
-              rules={{
-                required: <span>Birthday is required.</span>,
-              }}
-            />
-            <ErrorMessage errors={errors} name="dob" />
-          </Grid>
+          <Input
+            register={register}
+            control={control}
+            errors={errors}
+            type="text"
+            formLabel="Phone"
+            formName="phone"
+            formValue={account.phone}
+            rules={{
+              required: <span>Phone is required.</span>,
+            }}
+          />
 
-          <Grid item xs={12}>
-            <Controller
-              as={
-                <TextField
-                  className={classes.container}
-                  id="standard-basic"
-                  fullWidth
-                  multiline
-                  variant="outlined"
-                  rowsMax={20}
-                  type="text"
-                  ref={register}
-                  label="Bio"
-                />
-              }
-              control={control}
-              name="bio"
-              defaultValue={account.bio}
-              rules={{
-                required: <span>Bio is required.</span>,
-              }}
-            />
-            <ErrorMessage errors={errors} name="bio" />
-          </Grid>
+          <Input
+            register={register}
+            control={control}
+            errors={errors}
+            type="date"
+            formLabel="Birthday"
+            formName="dob"
+            formValue={account.dob}
+            rules={{
+              required: <span>Birthday is required.</span>,
+            }}
+          />
+
+          <TextArea
+            register={register}
+            control={control}
+            errors={errors}
+            type="date"
+            formLabel="Bio"
+            formName="bio"
+            formValue={account.bio}
+            rules={{
+              required: <span>Bio is required.</span>,
+            }}
+          />
         </form>
       </Grid>
     </Container>
