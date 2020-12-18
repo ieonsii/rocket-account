@@ -89,6 +89,10 @@ const Edit = (props) => {
             formValue={account.email}
             rules={{
               required: <span>Email is required.</span>,
+              pattern: {
+                value: /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i,
+                message: <span>Entered value does not match email format</span>,
+              },
             }}
           />
 
@@ -102,6 +106,14 @@ const Edit = (props) => {
             formValue={account.phone}
             rules={{
               required: <span>Phone is required.</span>,
+              pattern: {
+                value: /^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$/,
+                message: (
+                  <span>
+                    Entered value does not match australian phone formats
+                  </span>
+                ),
+              },
             }}
           />
 
