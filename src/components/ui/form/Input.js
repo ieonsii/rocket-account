@@ -18,7 +18,7 @@ const Input = (props) => {
 
   const useStyles = makeStyles((theme) => ({
     fieldContainer: {
-      margin: theme.spacing(2),
+      margin: theme.spacing(0.5),
     },
   }));
 
@@ -29,7 +29,7 @@ const Input = (props) => {
       <Controller
         as={
           <TextField
-            className={classes.container}
+            className={classes.fieldContainer}
             id="standard-basic"
             fullWidth
             type={type}
@@ -48,7 +48,7 @@ const Input = (props) => {
 };
 Input.propTypes = {
   register: PropTypes.func.isRequired,
-  control: PropTypes.func.isRequired,
+  control: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired,
   type: PropTypes.string.isRequired,
   formLabel: PropTypes.string.isRequired,
