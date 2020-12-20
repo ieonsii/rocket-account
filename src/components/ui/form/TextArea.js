@@ -19,6 +19,15 @@ const Input = (props) => {
   const useStyles = makeStyles((theme) => ({
     fieldContainer: {
       margin: theme.spacing(0.5),
+      '& label': {
+        marginTop: '15px',
+        color: 'rgb(0,175,149)',
+        fontWeight: '500',
+        fontSize: '1.33rem',
+      },
+      '& textarea': {
+        marginTop: '15px',
+      },
     },
   }));
 
