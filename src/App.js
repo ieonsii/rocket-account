@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import './App.css';
+import { makeStyles, Container, Grid, Paper } from '@material-ui/core';
 
 import Header from './components/header/Header';
 import Overview from './components/account/overview';
@@ -17,17 +17,50 @@ function App() {
     bio:
       'Dr. Bruce Banner is a character in the Marvel Cinematic Universe (MCU) film franchise initially portrayed by Edward Norton and subsequently by Mark Ruffalo—based on the Marvel Comics character of the same name—known commonly by his alter ego, the Hulk. In the films, Banner is a renowned physicist who subjected himself to a gamma radiation experiment designed to replicate a World War II-era "super soldier" program.',
   });
+
+  const useStyles = makeStyles((theme) => ({
+    bodyContainer: {
+      padding: theme.spacing(2),
+      display: 'flex',
+      height: '100%',
+      overflowY: 'hidden',
+      flexDirection: 'column',
+      width: '100%',
+      justifyContent: 'center',
+      '& div': {
+        '& span': {
+          color: 'red',
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+          justifyContent: 'right',
+          textAlign: 'right',
+          fontSize: '0.66em',
+          padding: '0.33rem 0',
+        },
+      },
+    },
+  }));
+
+  const classes = useStyles();
+
   return (
     <>
       <Header editMode={editMode} setEditMode={setEditMode} />
-      {!editMode && <Overview account={account} />}
-      {editMode && (
-        <Edit
-          account={account}
-          setAccount={setAccount}
-          setEditMode={setEditMode}
-        />
-      )}
+      <Container maxWidth="sm">
+        <Grid container spacing={3}>
+          <Paper className={classes.bodyContainer}>
+            {!editMode && <Overview account={account} />}
+            {editMode && (
+              <Edit
+                account={account}
+                setAccount={setAccount}
+                setEditMode={setEditMode}
+              />
+            )}
+          </Paper>
+        </Grid>
+      </Container>
     </>
   );
 }
