@@ -46,8 +46,8 @@ function App() {
 
   return (
     <>
-      <Header editMode={editMode} setEditMode={setEditMode} />
       <Container maxWidth="xs">
+        <Header editMode={editMode} setEditMode={setEditMode} />
         <Grid container spacing={3}>
           <Paper className={classes.bodyContainer}>
             {!editMode && <Overview account={account} />}
