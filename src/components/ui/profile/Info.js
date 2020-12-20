@@ -7,9 +7,13 @@ const Input = (props) => {
   const useStyles = makeStyles(() => ({
     infoHeader: {
       color: 'rgb(0,175,149)',
+      fontWeight: '500',
+      lineHeight: '1.33rem',
     },
     infoContent: {
       color: 'rgb(0,0,0)',
+      fontWeight: '500',
+      lineHeight: '1.33rem',
     },
   }));
 

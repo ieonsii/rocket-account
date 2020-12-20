@@ -20,7 +20,8 @@ const Header = (props) => {
       flexGrow: 1,
     },
     headingText: {
-      textAlign: 'center',
+      textAlign: 'left',
+      color: 'rgb(0,175,149)',
       fontSize: '2rem',
       [theme.breakpoints.down('xs')]: {
         fontSize: '1.5rem',
@@ -39,7 +40,7 @@ const Header = (props) => {
           </a>
         )}
       </Grid>
-      <Grid xs={6}>
+      <Grid xs={9}>
         <h1 className={classes.headingText}>My Account</h1>
       </Grid>
       <Grid>
