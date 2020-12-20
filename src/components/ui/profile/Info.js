@@ -15,6 +15,9 @@ const Input = (props) => {
       color: 'rgb(0,0,0)',
       fontWeight: '500',
       lineHeight: '1.33rem',
+      '& a': {
+        color: 'rgb(0,0,0)',
+      },
     },
   }));
 
