@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core';
 
-const Input = (props) => {
+const Info = (props) => {
   const { label, value } = props;
 
   const useStyles = makeStyles(() => ({
@@ -30,9 +30,9 @@ const Input = (props) => {
     </>
   );
 };
-Input.propTypes = {
+Info.propTypes = {
   label: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.node.isRequired,
 };
 
-export default Input;
+export default Info;

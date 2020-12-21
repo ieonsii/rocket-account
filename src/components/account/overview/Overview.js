@@ -8,11 +8,11 @@ const Overview = (props) => {
   const account = props.account;
   return (
     <>
-      <Grid container direction="row" justify="center" alignItems="left">
-        <Grid xs={6}>
+      <Grid container direction="row" justify="center">
+        <Grid item xs={6}>
           <Info label="First Name" value={account.firstName} />
         </Grid>
-        <Grid xs={6}>
+        <Grid item xs={6}>
           <Info label="Last Name" value={account.lastName} />
         </Grid>
       </Grid>

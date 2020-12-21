@@ -67,7 +67,7 @@ const Header = (props) => {
           </a>
         )}
       </Grid>
-      <Grid xs={9}>
+      <Grid item xs={9}>
         <h1 className={classes.headingText}>My Account</h1>
       </Grid>
       <Grid className={classes.editLink}>

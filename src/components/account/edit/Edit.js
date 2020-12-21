@@ -24,7 +24,7 @@ const Edit = (props) => {
         formName="firstName"
         formValue={account.firstName}
         rules={{
-          required: <span>First Name is required.</span>,
+          required: <span>Your first name is required</span>,
         }}
       />
 
@@ -37,7 +37,7 @@ const Edit = (props) => {
         formName="lastName"
         formValue={account.lastName}
         rules={{
-          required: <span>Last Name is required.</span>,
+          required: <span>Your last name is required</span>,
         }}
       />
 
@@ -53,7 +53,7 @@ const Edit = (props) => {
           required: <span>Email is required.</span>,
           pattern: {
             value: /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i,
-            message: <span>Entered value does not match email format</span>,
+            message: <span>Your email is not a valid email</span>,
           },
         }}
       />
@@ -63,6 +63,7 @@ const Edit = (props) => {
         control={control}
         errors={errors}
         type="text"
+        pattern="\d*"
         formLabel="Phone"
         formName="phone"
         formValue={account.phone}
@@ -71,7 +72,9 @@ const Edit = (props) => {
           pattern: {
             value: /^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$/,
             message: (
-              <span>Entered value does not match australian phone formats</span>
+              <span>
+                Your phone number is not a valid australian phone number
+              </span>
             ),
           },
         }}
@@ -82,11 +85,11 @@ const Edit = (props) => {
         control={control}
         errors={errors}
         type="date"
-        formLabel="Birthday"
+        formLabel="Date of Birth"
         formName="dob"
         formValue={account.dob}
         rules={{
-          required: <span>Birthday is required.</span>,
+          required: <span>Your date of birth is required</span>,
         }}
       />
 
@@ -99,7 +102,7 @@ const Edit = (props) => {
         formName="bio"
         formValue={account.bio}
         rules={{
-          required: <span>Bio is required.</span>,
+          required: <span>Please provide a bio</span>,
         }}
       />
     </form>

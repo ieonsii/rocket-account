@@ -36,7 +36,6 @@ function App() {
           justifyContent: 'right',
           textAlign: 'right',
           fontSize: '0.66em',
-          padding: '0.33rem 0',
         },
       },
     },

@@ -44,6 +44,9 @@ const Input = (props) => {
             type={type}
             ref={register}
             label={formLabel}
+            InputLabelProps={{
+              shrink: true,
+            }}
           />
         }
         control={control}
