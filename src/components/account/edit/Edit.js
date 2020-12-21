@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 
 import Input from '../../ui/form/Input.js';
+import PhoneInput from '../../ui/form/PhoneInput.js';
 import TextArea from '../../ui/form/TextArea.js';
 
 const Edit = (props) => {
@@ -58,17 +59,15 @@ const Edit = (props) => {
         }}
       />
 
-      <Input
+      <PhoneInput
         register={register}
         control={control}
         errors={errors}
         type="text"
-        pattern="\d*"
-        formLabel="Phone"
         formName="phone"
         formValue={account.phone}
         rules={{
-          required: <span>Phone is required.</span>,
+          required: <span>Your phone number is required</span>,
           pattern: {
             value: /^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$/,
             message: (
